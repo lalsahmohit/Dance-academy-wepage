@@ -1,0 +1,35 @@
+extends base.pug 
+//-its serves to base.pug
+
+block scripts
+    scripts(src='static/index.js')
+
+block style
+    style
+        include ../static/style.css
+
+block content
+   .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Sign Up
+
+        // register form
+        form(method='POST' action='/submit')
+          div.form-group
+            label(for='name') Name:     
+            input#name.form-control(type='text', placeholder='first and last' name='name')
+          div.form-group
+            label(for='email') Email:     
+            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+          div.form-group
+            label(for='Phone No') Phone No:
+            input#favoriteBook.form-control(type='text', placeholder='phone no' name='phone no')
+          div.form-group
+            label(for='Address') Address:     
+            input#pw.form-control(type='text' name='Address')
+          div.form-group
+            label(for='Concern') Concern:     
+            input#pw2.form-control(type='concern' name='enter your conern')
+          button.btn.btn-primary(type='submit') SUBMIT
+        
